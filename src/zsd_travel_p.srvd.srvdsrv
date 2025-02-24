@@ -1,0 +1,6 @@
+@EndUserText.label: 'service definition for projection of travel'
+define service ZSD_TRAVEL_P {
+  expose ZC_TRAVEL_P;
+  expose ZC_BOOKING_P;
+  expose ZC_BOOKSUPPL_P;
+}

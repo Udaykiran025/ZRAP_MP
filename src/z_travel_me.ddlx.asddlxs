@@ -1,0 +1,70 @@
+@Metadata.layer: #CORE
+
+@UI: {headerInfo: { typeName: 'Travel',
+                  typeNamePlural: 'Travel',
+                  title: { type: #STANDARD, label: 'Travel', value: 'TravelId' } }
+
+                  }
+@Search.searchable: true
+annotate view ZC_TRAVEL_P with
+{
+
+  @UI.facet: [{ id: 'Travel', position: 10, purpose: #STANDARD ,type: #IDENTIFICATION_REFERENCE, label: 'Travel Details'  },
+  { id: 'BookingTravel', position: 20, purpose: #STANDARD ,type: #LINEITEM_REFERENCE, label: 'Booking Details', targetElement: '_Booking'  }]
+
+  @UI.lineItem: [{ position: 10 }]
+  @UI.identification: [{ position: 10 }]
+  @Search.defaultSearchElement: true
+  TravelId;
+  @UI.lineItem: [{ position: 20 }]
+  @UI.selectionField: [{ position: 10 }]
+  @UI.identification: [{ position: 20 }]
+  @Search.defaultSearchElement: true
+  @Consumption.valueHelpDefinition: [{ entity: {
+      name: '/DMO/I_Agency',
+      element: 'AgencyID'
+  } }]
+  AgencyId;
+  //AgencyName;
+  @UI.lineItem: [{ position: 30 }]
+  @UI.selectionField: [{ position: 20 }]
+  @UI.identification: [{ position: 30 }]
+
+  //@Search.defaultSearchElement: true
+  @Consumption.valueHelpDefinition: [{ entity: {
+    name: '/DMO/I_Customer',
+    element: 'CustomerID'
+  } }]
+  CustomerId;
+  //CustomerName;
+  @UI.lineItem: [{ position: 40 }]
+  @UI.identification: [{ position: 40 }]
+  BeginDate;
+  @UI.lineItem: [{ position: 50 }]
+  @UI.identification: [{ position: 50 }]
+  EndDate;
+  @UI.identification: [{ position: 60 }]
+  BookingFee;
+  @UI.lineItem: [{ position: 60 }]
+
+  @UI.identification: [{ position: 70 }]
+  TotalPrice;
+  //CurrencyCode;
+  @UI.identification: [{ position: 80 }]
+  Description;
+  @UI.lineItem: [{ position: 70 }]
+  @UI.selectionField: [{ position: 30 }]
+  @UI.textArrangement: #TEXT_ONLY
+  @Consumption.valueHelpDefinition: [{ entity: {
+    name: '/DMO/I_Overall_Status_VH',
+    element: 'OverallStatus'
+  } }]
+  @UI.identification: [{ position: 90 }]
+  OverallStatus;
+
+
+  //Text;
+  @UI.hidden: true
+  LastChangedAt;
+
+}
