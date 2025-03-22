@@ -3,6 +3,9 @@ CLASS lhc_ZI_TRAVEL_cd DEFINITION INHERITING FROM cl_abap_behavior_handler.
 
     METHODS get_instance_authorizations FOR INSTANCE AUTHORIZATION
       IMPORTING keys REQUEST requested_authorizations FOR ZI_TRAVEL_cd RESULT result.
+
+    METHODS earlynumbering_cba_booking FOR NUMBERING
+      IMPORTING entities FOR CREATE zi_travel_cd\_booking.
     METHODS earlynumbering_create FOR NUMBERING
       IMPORTING entities
                   FOR CREATE zi_travel_cd.
@@ -59,6 +62,9 @@ CLASS lhc_ZI_TRAVEL_cd IMPLEMENTATION.
                    to mapped-zi_travel_cd.
 
   endloop.
+  ENDMETHOD.
+
+  METHOD earlynumbering_cba_Booking.
   ENDMETHOD.
 
 ENDCLASS.

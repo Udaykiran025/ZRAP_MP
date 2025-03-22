@@ -21,8 +21,8 @@ annotate view ZC_TRAVEL_P with
   @UI.identification: [{ position: 20 }]
   @Search.defaultSearchElement: true
   @Consumption.valueHelpDefinition: [{ entity: {
-      name: '/DMO/I_Agency',
-      element: 'AgencyID'
+      name: 'ZUD_CUST_AGENCY',
+      element: 'Agency_Id'
   } }]
   AgencyId;
   //AgencyName;
